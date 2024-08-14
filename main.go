@@ -10,11 +10,11 @@ const ()
 type Status string
 
 const (
-	Operational         Status = "Android"
-	DegradedPerformance Status = "IOS"
-	PartialOutage       Status = "MacOS"
-	MajorOutage         Status = "Windows"
-	Maintenance         Status = "maintenance"
+	Operational         Status = "Operational"
+	DegradedPerformance Status = "DegradedPerformance"
+	PartialOutage       Status = "PartialOutage"
+	MajorOutage         Status = "MajorOutage"
+	Maintenance         Status = "Maintenance"
 )
 
 var AllStatuses = []Status{
