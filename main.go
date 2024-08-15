@@ -2,6 +2,7 @@ package main
 
 import (
 	"fmt"
+	"net/http"
 	"time"
 )
 
@@ -32,12 +33,30 @@ type Domain struct {
 	LastInterval time.Time
 }
 
+type Response struct {
+	Status  int
+	Latency uint
+	Time    time.Time
+}
+
 type Incident struct {
 	Error    uint
 	Protocol string
 	FirstLog time.Time
 	LastLog  time.Time
 	Length   uint
+}
+
+func (t Domain) SendPing() error {
+	resp, err := http.Get(t.Url)
+	if err != nil {
+		return err
+	}
+
+	var newResponse Response
+	newResponse.Status = resp.StatusCode
+
+	return nil
 }
 
 func main() {
