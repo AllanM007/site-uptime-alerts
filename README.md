@@ -1,2 +1,2 @@
 ## SiteUptime
-- This project's goal is to track uptime for systems
+- This project's goal is to track downtime for systems
